@@ -17,6 +17,8 @@
             background-color: #f0f8ff;
             color: #333;
             line-height: 1.6;
+            /* Suaviza a rolagem da página ao clicar nos links */
+            scroll-behavior: smooth; 
         }
 
         /* Cabeçalho */
@@ -43,6 +45,9 @@
             background-color: #0077b6;
             text-align: center;
             padding: 0.5rem;
+            position: sticky; /* Mantém o menu fixo no topo ao rolar a página */
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
@@ -69,8 +74,8 @@
             gap: 2rem;
         }
 
-        /* Artigos */
-        main article {
+        /* Artigos e Seções */
+        main article, main section {
             background: white;
             padding: 2rem;
             margin-bottom: 2rem;
@@ -78,15 +83,28 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        main article h2 {
+        main article h2, main section h2 {
             color: #0077b6;
             margin-bottom: 1rem;
+            border-bottom: 2px solid #f0f8ff;
+            padding-bottom: 0.5rem;
         }
 
         .meta-info {
             font-size: 0.9rem;
             color: #777;
             margin-bottom: 1rem;
+        }
+
+        /* Estilos extras para listas dentro do conteúdo */
+        main ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        main ul li {
+            margin-bottom: 0.5rem;
         }
 
         /* Barra Lateral (Sidebar) */
@@ -147,15 +165,17 @@
     </header>
 
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Espécies</a>
-        <a href="#">Preservação</a>
-        <a href="#">Sobre o Projeto</a>
+        <a href="#inicio">Início</a>
+        <a href="#especies">Espécies</a>
+        <a href="#preservacao">Preservação</a>
+        <a href="#sobre">Sobre o Projeto</a>
     </nav>
 
     <div class="container">
         
         <main>
+            <div id="inicio"></div>
+
             <article>
                 <h2>A Importância dos Recifes de Coral</h2>
                 <div class="meta-info">Postado em: 17 de Junho de 2026 | Por: Equipe do Projeto</div>
@@ -163,12 +183,29 @@
                 <p>Infelizmente, devido ao aumento da temperatura da água e à poluição, muitos recifes estão sofrendo com o fenômeno do branqueamento. Proteger esses ecossistemas é urgente para garantir o futuro dos oceanos.</p>
             </article>
 
-            <article>
+            <article id="especies">
                 <h2>Curiosidades sobre os Gigantes do Oceano: As Baleias-Azuis</h2>
                 <div class="meta-info">Postado em: 15 de Junho de 2026 | Por: Equipe do Projeto</div>
                 <p>A baleia-azul é o maior animal que já existiu na Terra, superando até os maiores dinossauros. Elas podem chegar a medir 30 metros de comprimento e pesar mais de 180 toneladas. Curiosamente, a base da sua alimentação é o krill, um minúsculo crustáceo parecido com o camarão.</p>
                 <p>O canto de uma baleia-azul pode ser ouvido por outras baleias a centenas de quilômetros de distância, funcionando como uma complexa rede de comunicação subaquática.</p>
             </article>
+
+            <section id="preservacao">
+                <h2>Preservação Marinha: Como Proteger Nossos Oceanos</h2>
+                <div class="meta-info">Postado em: 23 de Junho de 2026 | Por: Equipe do Projeto</div>
+                <p>Os oceanos cobrem mais de 70% da superfície do nosso planeta e produzem cerca de metade do oxigênio que respiramos. No entanto, eles enfrentam graves ameaças como a pesca predatória, o aquecimento global e o descarte massivo de plásticos.</p>
+                <p>Para mudar esse cenário, pequenas atitudes no nosso dia a dia podem gerar grandes impactos na conservação da vida debaixo d'água:</p>
+                <ul>
+                    <li><strong>Reduza o uso de plásticos descartáveis:</strong> Substitua sacolas, canudos e garrafas por opções reutilizáveis para evitar que cheguem aos estômagos de animais marinhos.</li>
+                    <li><strong>Descarte correto do lixo:</strong> Certifique-se de que seus resíduos recicláveis sejam destinados corretamente. O lixo jogado nas ruas muitas vezes é levado pelas chuvas até os rios e mares.</li>
+                    <li><strong>Consumo consciente:</strong> Evite consumir espécies de peixes e frutos do mar que estejam em risco de extinção ou que venham de pesca não sustentável.</li>
+                </ul>
+            </section>
+
+            <section id="sobre">
+                <h2>Sobre o Projeto Mundo Azul</h2>
+                <p>Este blog nasceu a partir de uma iniciativa escolar com o objetivo de espalhar conhecimento científico de forma simples e acessível. Acreditamos que a educação ambiental é a ferramenta mais poderosa para formar uma geração consciente e comprometida com o futuro do planeta.</p>
+            </section>
         </main>
 
         <aside>
@@ -177,9 +214,9 @@
             
             <h3>Links Úteis</h3>
             <ul>
-                <li><a href="#">Como ajudar a reduzir o plástico</a></li>
-                <li><a href="#">Projetos de preservação marinha</a></li>
-                <li><a href="#">Documentários recomendados</a></li>
+                <li><a href="#preservacao">Como ajudar a reduzir o plástico</a></li>
+                <li><a href="#preservacao">Projetos de preservação marinha</a></li>
+                <li><a href="#sobre">Documentários recomendados</a></li>
             </ul>
         </aside>
 
